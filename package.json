@@ -1,0 +1,19 @@
+{
+  "name": "bookdatabase",
+  "version": "1.0.0",
+  "description": "book database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ma7eer/BookDatabase.git"
+  },
+  "author": "Maher Alkendi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ma7eer/BookDatabase/issues"
+  },
+  "homepage": "https://github.com/Ma7eer/BookDatabase#readme"
+}
