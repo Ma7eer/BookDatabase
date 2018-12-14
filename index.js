@@ -28,11 +28,33 @@ app.get('/books', (req, res) => {
 
   connection.query('SELECT * FROM booklist', function (error, results) {
     if (error) throw error;
-    res.json({message:results[0]})
+    res.json({data:results.map(result => result)})
   });
 
   connection.end();
 });
+
+// POST route
+app.post('/books', (req, res) => {
+  let id = req.query.id;
+  let title = req.query.title;
+  let author = req.query.author;
+  let description = req.query.description;
+  let review = req.query.review;
+  let status = req.query.status;
+  let sql = `INSERT INTO booklist (id, title, author, description, review, status)
+             VALUES (${id}, ${title}, ${author}, ${description}, ${review}, ${status});`
+
+  connection.connect();
+
+  connection.query(sql, function(error, results) {
+    if (error) throw error;
+    // res.json({results});
+    // return res.redirect('/books');
+  })
+
+  connection.end();
+})
 
 // server
 app.listen(3000, () => {
